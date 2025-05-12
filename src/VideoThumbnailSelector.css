@@ -1,0 +1,149 @@
+.thumbnail-selector-custom {
+  width: 100%;
+  max-width: 600px;
+  margin: 1rem auto;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.upload-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: #3897f0;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.preview {
+  width: 100%;
+  background: #000;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 0.75rem;
+  max-width: 200px;
+}
+
+.preview img {
+  width: 100%;
+  max-width: 200px;
+  display: block;
+}
+
+.timeline-strip {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  height: 105px;
+  border-radius: 4px;
+  cursor: pointer;
+  background: transparent;
+}
+
+.timeline-strip .thumbnail-img {
+  flex-shrink: 0;
+  /* height: 100%; */
+  width: auto;
+  height: 80px;
+}
+
+.handle {
+  position: absolute;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: transparent;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.handle::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  background: transparent;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.thumbnail-selector-custom .timeline-strip {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+}
+
+/* semi-transparent highlight for the 3s window */
+.thumbnail-selector-custom .selection-range {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: transparent;
+  pointer-events: none;
+  /* border-radius: 4px; */
+  z-index: 1;
+  width: 30px;
+}
+.thumbnail-selector-custom .selection-range-img {
+  position: absolute;
+  /* top: 50%; */
+  /* transform: translateY(-50%); */
+  /* bottom: 0; */
+  /* left: -50%; */
+  background: rgba(56, 151, 240, 0.3);
+  pointer-events: none;
+  border-radius: 4px;
+  z-index: 1;
+  width: 45px;
+}
+
+/* keep handle above the selection-range */
+.thumbnail-selector-custom .handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: transparent;
+  z-index: 2;
+}
+
+.thumbnail-selector-custom .preview {
+  position: relative;
+}
+
+/* center play icon over preview */
+.thumbnail-selector-custom .play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 3;
+}
+
+/* hidden by default; shown when playing */
+.thumbnail-selector-custom .preview-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  object-fit: cover;
+  z-index: 2;
+}
